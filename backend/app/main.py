@@ -7,7 +7,7 @@ from fastapi.middleware.cors import CORSMiddleware
 origins = [
     "http://localhost:5173",
     "http://127.0.0.1:5173",
-    "https://trade-opportunities-analyzer.vercel.app/",
+    "https://trade-opportunities-analyzer.vercel.app",
 ]
 
 app = FastAPI(title="Trade Opportunities API")
