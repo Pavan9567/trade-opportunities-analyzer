@@ -39,12 +39,20 @@ async def analyze_sector(
 
     try:
         news = await fetch_news(sector)
+
+        if not news or news == "No data available":
+            logger.warning("No news data found, using fallback message")
+            news = "No recent market data found for this sector"
     except Exception as e:
         logger.error(f"Scraper error: {str(e)}")
         raise HTTPException(status_code=500, detail="Failed to fetch market data")
 
     try:
         analysis = await analyze_data(sector, news)
+
+        if not analysis:
+            logger.warning("Empty AI response, using fallback")
+            analysis = "Analysis could not be generated at this time."
     except Exception as e:
         logger.error(f"AI error: {str(e)}")
         raise HTTPException(status_code=500, detail="AI analysis failed")
