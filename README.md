@@ -177,8 +177,8 @@ Vercel
 
 🔗 Deployment Links
 
-Frontend:
-Backend:
+Frontend: https://trade-opportunities-analyzer.vercel.app
+Backend: https://trade-opportunities-analyzer.onrender.com
 
 ✅ Features
 
